@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwaitProject", "AsyncAwaitProject\AsyncAwaitProject.csproj", "{93BED171-BF99-499D-B7C7-F3833F05EDED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93BED171-BF99-499D-B7C7-F3833F05EDED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93BED171-BF99-499D-B7C7-F3833F05EDED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93BED171-BF99-499D-B7C7-F3833F05EDED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93BED171-BF99-499D-B7C7-F3833F05EDED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
