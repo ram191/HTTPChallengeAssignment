@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
-using IronWebScraper;
 using Newtonsoft.Json;
 
 namespace AsyncAwaitProject
@@ -23,7 +22,13 @@ namespace AsyncAwaitProject
 
             //Console.WriteLine(await NumberThree.GetData());
             // Create Object From Hello Scrape class
-            NumberFour.Parse();
+            //WebScrapes.ParseBirdsOfPrey();
+
+            //Console.WriteLine(await NumberThree.GetData());
+            Console.WriteLine(await MovieDbApi.GetIndonesian());
+            Console.WriteLine(await MovieDbApi.GetKeanu());
+            Console.WriteLine(await MovieDbApi.GetGood2016());
+            Console.WriteLine(await MovieDbApi.GetRobertAndTom());
         }
     }
 
