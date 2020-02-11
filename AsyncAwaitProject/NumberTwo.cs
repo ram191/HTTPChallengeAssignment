@@ -11,8 +11,7 @@ namespace AsyncAwaitProject
     {
         public static async Task<string> RichEmployees()
         {
-            var client = new HttpClient();
-            var result = await client.GetStringAsync("https://mul14.github.io/data/employees.json");
+            var result = await Fetcher.Get("https://mul14.github.io/data/employees.json");
             var jObj = JsonConvert.DeserializeObject<List<Employee>>(result);
             var names = new List<string>();
 
@@ -28,8 +27,7 @@ namespace AsyncAwaitProject
 
         public static async Task<string> LivesInJakarta()
         {
-            var client = new HttpClient();
-            var result = await client.GetStringAsync("https://mul14.github.io/data/employees.json");
+            var result = await Fetcher.Get("https://mul14.github.io/data/employees.json");
             var jObj = JsonConvert.DeserializeObject<List<Employee>>(result);
             var names = new List<string>();
 
@@ -51,8 +49,7 @@ namespace AsyncAwaitProject
         // Add if result is null
         public static async Task<string> BornOnMarch()
         {
-            var client = new HttpClient();
-            var result = await client.GetStringAsync("https://mul14.github.io/data/employees.json");
+            var result = await Fetcher.Get("https://mul14.github.io/data/employees.json");
             var jObj = JsonConvert.DeserializeObject<List<Employee>>(result);
             var names = new List<string>();
 
@@ -76,8 +73,7 @@ namespace AsyncAwaitProject
         //Juan????
         public static async Task<string> RndEmployees()
         {
-            var client = new HttpClient();
-            var result = await client.GetStringAsync("https://mul14.github.io/data/employees.json");
+            var result = await Fetcher.Get("https://mul14.github.io/data/employees.json");
             var jObj = JsonConvert.DeserializeObject<List<Employee>>(result);
             var names = new List<string>();
 
@@ -98,8 +94,7 @@ namespace AsyncAwaitProject
 
         public static async Task<string> TotalAbsences()
         {
-            var client = new HttpClient();
-            var result = await client.GetStringAsync("https://mul14.github.io/data/employees.json");
+            var result = await Fetcher.Get("https://mul14.github.io/data/employees.json");
             var jObj = JsonConvert.DeserializeObject<List<Employee>>(result);
             var names = new List<int>();
 

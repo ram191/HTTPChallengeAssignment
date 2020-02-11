@@ -11,9 +11,8 @@ namespace AsyncAwaitProject
     {
         public static async Task<string> GetData()
         {
-            var client = new HttpClient();
-            var data1 = await client.GetStringAsync("https://jsonplaceholder.typicode.com/users");
-            var data2 = await client.GetStringAsync("https://jsonplaceholder.typicode.com/posts");
+            string data1 = await Fetcher.Get("https://jsonplaceholder.typicode.com/users");
+            string data2 = await Fetcher.Get("https://jsonplaceholder.typicode.com/posts");
             var jObj1 = JsonConvert.DeserializeObject<List<User>>(data1);
             var jObj2 = JsonConvert.DeserializeObject<List<Post>>(data2);
             var jObj3 = new List<List<NumberThreeClass>>();

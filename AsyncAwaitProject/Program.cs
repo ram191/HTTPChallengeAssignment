@@ -13,22 +13,32 @@ namespace AsyncAwaitProject
     {
         static async Task Main(string[] args)
         {
-            ////NumberTwo
-            //Console.WriteLine(await RichEmployees());
-            //Console.WriteLine(await LivesInJakarta());
-            //Console.WriteLine(await BornOnMarch());
-            //Console.WriteLine(await RndEmployees());
-            //Console.WriteLine(await TotalAbsences());
+            ////NumberOne
+            //Fetcher.Get("www.kompas.com");
+            //Applied in Number Two
 
-            //Console.WriteLine(await NumberThree.GetData());
-            // Create Object From Hello Scrape class
-            //WebScrapes.ParseBirdsOfPrey();
+            //NumberTwo
+            Console.WriteLine(await NumberTwo.RichEmployees());
+            Console.WriteLine(await NumberTwo.LivesInJakarta());
+            Console.WriteLine(await NumberTwo.BornOnMarch());
+            Console.WriteLine(await NumberTwo.RndEmployees());
+            Console.WriteLine(await NumberTwo.TotalAbsences());
 
-            //Console.WriteLine(await NumberThree.GetData());
+            //Number Three
+            Console.WriteLine(await NumberThree.GetData());
+
+            //Number Five
             Console.WriteLine(await MovieDbApi.GetIndonesian());
             Console.WriteLine(await MovieDbApi.GetKeanu());
             Console.WriteLine(await MovieDbApi.GetGood2016());
             Console.WriteLine(await MovieDbApi.GetRobertAndTom());
+
+            //Number Five
+            WebScrapes.ParseKompas();
+
+            //Number Six
+            WebScrapes.ParseBirdsOfPrey();
+            WebScrapes.ParseTheTurning();
         }
     }
 
