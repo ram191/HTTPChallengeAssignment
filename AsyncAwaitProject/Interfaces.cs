@@ -1,13 +1,19 @@
 ﻿using System;
+using AsyncAwaitProject.Models;
+
 namespace AsyncAwaitProject
 {
-    public class NumberThreeClass : IPost, IUser
+    public interface IPost
     {
         public int userId { get; set; }
         public int id { get; set; }
         public string title { get; set; }
         public string body { get; set; }
-        public User user { get; set; }
+    }
+
+    public interface IUser
+    {
+        public int id { get; set; }
         public string name { get; set; }
         public string username { get; set; }
         public string email { get; set; }

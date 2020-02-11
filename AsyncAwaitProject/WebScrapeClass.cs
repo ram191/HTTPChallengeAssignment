@@ -1,8 +1,8 @@
-﻿using HtmlAgilityPack;
+﻿using AsyncAwaitProject.Models;
+using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace AsyncAwaitProject
 {
@@ -42,46 +42,6 @@ namespace AsyncAwaitProject
             }
         }
 
-        public static void ParseBirdsOfPrey()
-        {
-            string html = @"https://www.cgv.id/en/movies/info/20000600";
-            HtmlWeb web = new HtmlWeb();
-            var htmlDoc = web.Load(html);
-
-            HtmlNode title = htmlDoc.DocumentNode.SelectNodes("//div[@class='movie-info-title']").First();
-            HtmlNode [] jenisFilm = htmlDoc.DocumentNode.SelectNodes("//div[@class='movie-add-info left']").ToArray();
-            HtmlNode desc = htmlDoc.DocumentNode.SelectNodes("//div[@class='movie-synopsis right']").First();
-
-            Console.WriteLine(title.InnerHtml.Trim());
-            foreach (var item in jenisFilm)
-            {
-
-                Console.WriteLine(item.InnerText.Trim().Replace("\t", string.Empty));
-            }
-            Console.WriteLine($"Synopsis: {desc.InnerText.Trim()}");
-        }
-
-        public static void ParseTheTurning()
-        {
-            string html = @"https://www.cgv.id/en/movies/info/20002700";
-
-            HtmlWeb web = new HtmlWeb();
-
-            var htmlDoc = web.Load(html);
-
-            HtmlNode title = htmlDoc.DocumentNode.SelectNodes("//div[@class='movie-info-title']").First();
-            HtmlNode[] jenisFilm = htmlDoc.DocumentNode.SelectNodes("//div[@class='movie-add-info left']").ToArray();
-            HtmlNode desc = htmlDoc.DocumentNode.SelectNodes("//div[@class='movie-synopsis right']").First();
-
-            Console.WriteLine(title.InnerHtml.Trim());
-            foreach (var item in jenisFilm)
-            {
-
-                Console.WriteLine(item.InnerText.Trim().Replace("\t", string.Empty));
-            }
-            Console.WriteLine($"Synopsis: {desc.InnerText.Trim()}");
-        }
-
         public static List<string> ParseAllLinks()
         {
             string html = @"https://www.cgv.id/en/";
@@ -111,35 +71,14 @@ namespace AsyncAwaitProject
 
                 var htmlDoc = web.Load(html);
 
-                string title = htmlDoc.DocumentNode.SelectSingleNode("//div[@class='movie-info-title']").InnerHtml.Trim();
+                string title = htmlDoc.DocumentNode.SelectSingleNode("//div[@class='movie-info-title']").InnerText.Trim();
                 string info = htmlDoc.DocumentNode.SelectSingleNode(@"/html/body/div[2]/div/div[2]/div/div[1]/div[2]/div[2]/div[1]/ul").InnerText;
                 string synopsis = htmlDoc.DocumentNode.SelectSingleNode(@"/html/body/div[2]/div/div[2]/div/div[1]/div[2]/div[2]/div[2]").InnerText;
 
-                var films = new List<Films>();
                 Console.WriteLine($"JUDUL: {title}");
                 Console.WriteLine((info).Replace("\t", string.Empty).Trim());
                 Console.WriteLine($"SYNOPSIS: {(synopsis).Replace("\t", string.Empty).Replace("\n", string.Empty).Trim()}\n");
-
-
-
             }
         }
-    }
-
-    class Articles
-    {
-        public string Title { get; set; }
-        public string Url { get; set; }
-    }
-
-    class Films
-    {
-        public string JenisFilm { get; set; }
-        public string Produser { get; set; }
-        public string Sutradara { get; set; }
-        public string Penulis { get; set; }
-        public string Produksi { get; set; }
-        public string Casts { get; set; }
-        public string Sinopsis { get; set; }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -73,8 +72,6 @@ namespace AsyncAwaitProject
             return String.Join(',', hasil);
         }
 
-
-        //Juan????
         public static async Task<string> RndEmployees()
         {
             var jObj = await CreateJObject();

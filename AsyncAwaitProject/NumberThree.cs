@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
+using AsyncAwaitProject.Models;
 using Newtonsoft.Json;
 
 namespace AsyncAwaitProject
@@ -15,8 +14,6 @@ namespace AsyncAwaitProject
             string data2 = await Fetcher.Get("https://jsonplaceholder.typicode.com/posts");
             var jObj1 = JsonConvert.DeserializeObject<List<User>>(data1);
             var jObj2 = JsonConvert.DeserializeObject<List<Post>>(data2);
-            var jObj3 = new List<List<NumberThreeClass>>();
-            var names = new List<string>();
 
             foreach(var unit in jObj2)
             {

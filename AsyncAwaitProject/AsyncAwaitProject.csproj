@@ -11,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="IronWebScraper">
-      <HintPath>..\..\..\IronWebScraper\IronWebScraper.dll</HintPath>
-    </Reference>
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>

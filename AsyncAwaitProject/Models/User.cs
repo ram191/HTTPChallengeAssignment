@@ -1,10 +1,10 @@
 ﻿using System;
-namespace AsyncAwaitProject
+namespace AsyncAwaitProject.Models
 {
     public class Geo
     {
         public string lat { get; set; }
-        public string lng { get; set; }
+        public string lang { get; set; }
     }
 
     public class Address
