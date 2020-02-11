@@ -19,14 +19,26 @@ namespace AsyncAwaitProject
             HtmlNode[] unodes = htmlDoc.DocumentNode.SelectNodes("//a[@class='headline__thumb__link']").ToArray();
             HtmlNode[] hnodes = htmlDoc.DocumentNode.SelectNodes("//h2[@class='headline__thumb__title']").ToArray();
 
-            foreach (HtmlNode item in hnodes)
+            var articles = new List<Articles>();
+            for (int x = 0; x < unodes.Length; x++)
             {
-                Console.WriteLine(item.InnerHtml);
+                var title = hnodes[x].InnerText;
+                var links = unodes[x].Attributes["href"].Value;
+
+                var newArt = new Articles
+                {
+                    Title = title,
+                    Url = links
+                };
+
+                articles.Add(newArt);
             }
 
-            foreach (HtmlNode item in unodes)
+            foreach (var x in articles)
             {
-                Console.WriteLine(item.Attributes["href"].Value);
+                Console.WriteLine(x.Title);
+                Console.WriteLine(x.Url);
+                Console.WriteLine("\n");
             }
         }
 
@@ -71,5 +83,11 @@ namespace AsyncAwaitProject
             }
             Console.WriteLine($"Synopsis: {desc.InnerText.Trim()}");
         }
+    }
+
+    class Articles
+    {
+        public string Title { get; set; }
+        public string Url { get; set; }
     }
 }
