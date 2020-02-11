@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using HtmlAgilityPack;
 using IronWebScraper;
 using Newtonsoft.Json;
 
@@ -20,31 +21,13 @@ namespace AsyncAwaitProject
             //Console.WriteLine(await RndEmployees());
             //Console.WriteLine(await TotalAbsences());
 
-            Console.WriteLine(await NumberThree.GetData());
-
-        }
-
-
-
-
-    }
-
-    class Scraper : WebScraper
-    {
-        public override void Init()
-        {
-            this.LoggingLevel = WebScraper.LogLevel.All;
-            this.Request("https://kompas.com", Parse);
-        }
-
-        public override void Parse(Response response)
-        {
-            foreach (var css1 in response.Css("latest ga--latest mt2 clearfix"))
-            {
-                string title = css1.TextContentClean;
-            }
+            //Console.WriteLine(await NumberThree.GetData());
+            // Create Object From Hello Scrape class
+            NumberFour.Parse();
         }
     }
+
+
 
 
 }
