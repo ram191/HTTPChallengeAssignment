@@ -13,11 +13,11 @@ namespace AsyncAwaitProject
     {
         static async Task Main(string[] args)
         {
-            ////NumberOne
+            //NumberOne
             //Fetcher.Get("www.kompas.com");
             //Applied in Number Two
 
-            ////NumberTwo
+            //NumberTwo
             //Console.WriteLine(await NumberTwo.RichEmployees());
             //Console.WriteLine(await NumberTwo.LivesInJakarta());
             //Console.WriteLine(await NumberTwo.BornOnMarch());
@@ -37,7 +37,7 @@ namespace AsyncAwaitProject
             //WebScrapes.ParseKompas();
 
             //Number Six
-            WebScrapes.ParseKompas();
+            WebScrapes.ParseAll();
         }
     }
 

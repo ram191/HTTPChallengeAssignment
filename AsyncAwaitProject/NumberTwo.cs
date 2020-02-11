@@ -9,10 +9,16 @@ namespace AsyncAwaitProject
 {
     public class NumberTwo
     {
-        public static async Task<string> RichEmployees()
+        public static async Task<List<Employee>> CreateJObject()
         {
             var result = await Fetcher.Get("https://mul14.github.io/data/employees.json");
             var jObj = JsonConvert.DeserializeObject<List<Employee>>(result);
+            return jObj;
+        }
+
+        public static async Task<string> RichEmployees()
+        {
+            var jObj = await CreateJObject();
             var names = new List<string>();
 
             foreach (var id in jObj)
@@ -27,8 +33,7 @@ namespace AsyncAwaitProject
 
         public static async Task<string> LivesInJakarta()
         {
-            var result = await Fetcher.Get("https://mul14.github.io/data/employees.json");
-            var jObj = JsonConvert.DeserializeObject<List<Employee>>(result);
+            var jObj = await CreateJObject();
             var names = new List<string>();
 
             foreach (var id in jObj)
@@ -49,8 +54,7 @@ namespace AsyncAwaitProject
         // Add if result is null
         public static async Task<string> BornOnMarch()
         {
-            var result = await Fetcher.Get("https://mul14.github.io/data/employees.json");
-            var jObj = JsonConvert.DeserializeObject<List<Employee>>(result);
+            var jObj = await CreateJObject();
             var names = new List<string>();
 
             foreach (var id in jObj)
@@ -73,8 +77,7 @@ namespace AsyncAwaitProject
         //Juan????
         public static async Task<string> RndEmployees()
         {
-            var result = await Fetcher.Get("https://mul14.github.io/data/employees.json");
-            var jObj = JsonConvert.DeserializeObject<List<Employee>>(result);
+            var jObj = await CreateJObject();
             var names = new List<string>();
 
             foreach (var id in jObj)
@@ -94,8 +97,7 @@ namespace AsyncAwaitProject
 
         public static async Task<string> TotalAbsences()
         {
-            var result = await Fetcher.Get("https://mul14.github.io/data/employees.json");
-            var jObj = JsonConvert.DeserializeObject<List<Employee>>(result);
+            var jObj = await CreateJObject();
             var names = new List<int>();
 
             foreach (var id in jObj)
